@@ -33,6 +33,9 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Use Simple Form gem for forms
+gem 'simple_form'
+
 group :development, :test do
   # Add support for Rspec
   gem 'rspec-rails'
