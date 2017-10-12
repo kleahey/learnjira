@@ -5,9 +5,10 @@ jobs:
     working_directory: ~/Git/learnjira
     docker:
       - image: circleci/ruby:2.3-slim
-      environment:
-        RAILS_ENV: development
+        environment:
+          RAILS_ENV: development
       - image: circleci/postgres:9.6
+
       steps:
       - checkout
 
