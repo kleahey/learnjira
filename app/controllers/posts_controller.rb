@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :set_post, only: [:show, :edit, :update]
 
   def index
     @posts = Post.all
@@ -9,7 +10,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(post_params)
+    @post = Post.create( post_params )
     if @post.save
       flash[:success] = "Your post has been created."
       redirect_to @post
@@ -20,13 +21,29 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
+  end
+
+  def edit
+  end
+
+  def update
+    if @post.update( post_params )
+      flash[:success] = "Your post has been updated."
+      redirect_to @post
+    else
+      flash[:alert] = "There was in error in updating your post. Please try again."
+      render :edit
+    end
   end
 
   private
 
   def post_params
     params.require(:post).permit(:title, :body)
+  end
+
+  def set_post
+    @post = Post.find( params[:id] )
   end
 
 end
