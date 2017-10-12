@@ -1,3 +1,4 @@
+require 'simplecov'
 require 'rails_helper.rb'
 
 feature 'Creating blog posts' do
