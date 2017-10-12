@@ -2,7 +2,7 @@ require 'simplecov'
 require 'rails_helper.rb'
 
 feature 'Display individual post' do
-  scenario 'by clicking on post\'s title' do
+  scenario 'by clicking on post title' do
     post_one = create(:post)
 
     visit '/blog'
