@@ -37,9 +37,9 @@ jobs:
       - run: bundle exec rake db:schema:load
 
       # Run rspec in parallel
-      - type: shell
-        command: |
-          bundle exec rspec --out test/test_results/rspec.xml
+      test:
+        override:
+          - bundle exec rspec --format progress --format RspecJunitFormatter -o $CIRCLE_TEST_REPORTS/rspec.xml
 
       # Save test results for timing analysis
       - store_test_results:
