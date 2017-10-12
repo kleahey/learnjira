@@ -1,0 +1,13 @@
+machine:
+  ruby:
+    version: 2.3.3
+deployment:
+  production:
+    branch: production
+    heroku:
+      appname: learnjira
+  staging:
+    branch: master
+    heroku:
+      appname: learnjira-stage
+  
