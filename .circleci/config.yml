@@ -39,11 +39,11 @@ jobs:
       # Run rspec in parallel
       - type: shell
         command: |
-          bundle exec rspec --out tmp/test_results/rspec.xml
+          bundle exec rspec --out test/test_results/rspec.xml
 
       # Save test results for timing analysis
       - store_test_results:
-          path: /tmp/test-results
+          path: test/test_results
 
       # Run Heroku setup
       - run: bash .circleci/setup-heroku.sh
