@@ -1,0 +1,71 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/kleahey/Git/learnjira/app/helpers/application_helper.rb": [
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        2,
+        null,
+        null
+      ],
+      "/Users/kleahey/Git/learnjira/app/helpers/posts_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/kleahey/Git/learnjira/app/controllers/posts_controller.rb": [
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null,
+        1,
+        2,
+        2,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        2,
+        null,
+        null,
+        null
+      ],
+      "/Users/kleahey/Git/learnjira/app/controllers/application_controller.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/kleahey/Git/learnjira/app/models/post.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/kleahey/Git/learnjira/app/models/application_record.rb": [
+        1,
+        1,
+        null
+      ]
+    },
+    "timestamp": 1507832596
+  }
+}
