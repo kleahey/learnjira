@@ -9,11 +9,11 @@ jobs:
       - image: circleci/ruby:2.3.3-node
         environment:
           PGHOST: 127.0.0.1
-          PGUSER: learnjira_development
+          PGUSER: learnjira-development
       - image: circleci/postgres:9.6
         environment:
           POSTGRES_USER: learnjira
-          POSTGRES_DB: learnjira_development
+          POSTGRES_DB: learnjira-development
           POSTGRES_PASSWORD: ""
     steps:
       - checkout
