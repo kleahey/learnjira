@@ -3,3 +3,5 @@
   <%= f.input :body %>
   <%= f.button :submit %>
 <% end %>
+
+<p><%= link_to "Delete Post", post_path(@post), method: :delete %></p>
