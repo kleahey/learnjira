@@ -15,7 +15,7 @@ gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
+gem 'uglifier'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -33,6 +33,9 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Use Simple Form gem for forms
+gem 'simple_form'
+
 group :development, :test do
   # Add support for Rspec
   gem 'rspec-rails'
@@ -43,6 +46,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   # Add factory girl for seeding data to database
   gem 'factory_girl_rails'
+  gem 'rspec_junit_formatter'
 end
 
 group :development do

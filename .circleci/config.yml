@@ -1,0 +1,61 @@
+version: 2
+jobs:
+  build:
+    parallelism: 1
+    environment:
+      RAILS_ENV: test
+    working_directory: ~/Git/learnjira
+    docker:
+      - image: circleci/ruby:2.3.3-node
+        environment:
+          PGHOST: 127.0.0.1
+          PGUSER: learnjira
+          RAILS_ENV: test
+          RACK_ENV: test
+      - image: circleci/postgres:9.6
+        environment:
+          POSTGRES_USER: learnjira
+          POSTGRES_DB: learnjira_test
+    steps:
+      - checkout
+
+      # Restore bundle cache
+      - restore_cache:
+          key: rails-demo-{{ checksum "Gemfile.lock" }}
+
+      # Bundle install dependencies
+      - run: bundle check --path=vendor/bundle || bundle install --path=vendor/bundle --jobs=4 --retry=3
+
+      # Store bundle cache
+      - save_cache:
+          key: rails-demo-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+
+      # Database setup
+      - run: bundle exec rake db:create
+      - run: bundle exec rake db:schema:load
+
+      # Run rspec in parallel
+      - run: mkdir ~/rspec
+      - run:
+          command: bundle exec rspec --format progress --format RspecJunitFormatter -o ~/rspec/rspec.xml
+          when: always
+
+      # Save test results for timing analysis
+      - store_test_results:
+          path: ~/rspec
+
+      # Run Heroku setup
+      - run: bash .circleci/setup-heroku.sh
+      - add_ssh_keys:
+          fingerprints:
+            - "e3:8e:ba:c9:09:ba:c4:c4:a6:e8:25:f0:8a:23:5b:c5"
+
+      # Deployment to Heroku
+      - deploy:
+          name: Deploy Develop to Heroku
+          command: |
+            if [ "${CIRCLE_BRANCH}" == master ]; then
+              git push heroku master
+            fi
