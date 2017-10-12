@@ -24,7 +24,7 @@ jobs:
           key: rails-demo-{{ checksum "Gemfile.lock" }}
 
       # Bundle install dependencies
-      - run: bundle install --path vendor/bundle
+      - run: bundle check --path=vendor/bundle || bundle install --path=vendor/bundle --jobs=4 --retry=3
 
       # Store bundle cache
       - save_cache:
@@ -37,13 +37,14 @@ jobs:
       - run: bundle exec rake db:schema:load
 
       # Run rspec in parallel
-      - type: shell
-        command: |
-          bundle exec rspec --format progress --format RspecJunitFormatter -o $CIRCLE_TEST_REPORTS/rspec.xml
+      - run: mkdir ~/rspec
+      - run:
+          command: bundle exec rspec --format progress --format RspecJunitFormatter -o ~/rspec/rspec.xml
+          when: always
 
       # Save test results for timing analysis
       - store_test_results:
-          path: test/test_results
+          path: ~/rspec
 
       # Run Heroku setup
       - run: bash .circleci/setup-heroku.sh
