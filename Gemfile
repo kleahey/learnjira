@@ -66,3 +66,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'codacy-coverage', :require => false
+
+# Add Materialize CSS assets to Rails
+gem 'materialize-sass'

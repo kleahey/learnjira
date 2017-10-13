@@ -1,5 +1,13 @@
 {
   "name": "learnjira",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "jquery": "^3.2.1"
+  },
+  "version": "1.0.0",
+  "description": "A Blog/WebApp for learning how to use JIRA",
+  "main": "index.js",
+  "repository": "https://github.com/kleahey/learnjira.git",
+  "author": "Kevin Leahey <kleahey@me.com>",
+  "license": "MIT"
 }
