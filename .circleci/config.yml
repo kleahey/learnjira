@@ -32,6 +32,9 @@ jobs:
           paths:
             - vendor/bundle
 
+      # Add jquery dependency
+      - run: yarn add jquery
+
       # Database setup
       - run: bundle exec rake db:create
       - run: bundle exec rake db:schema:load
