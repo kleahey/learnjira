@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :post do
-    title "This is a title string"
-    body "This is body text."
+    title { Faker::Beer.name }
+    body { Faker::Lorem.paragraphs(3) }
   end
 end

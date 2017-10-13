@@ -46,6 +46,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   # Add factory girl for seeding data to database
   gem 'factory_girl_rails'
+  gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master'
   gem 'rspec_junit_formatter'
 end
 

@@ -1,3 +1,239 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.wrapper {
+	max-width: 400px;
+	margin: 50px auto;
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+.border-tlr-radius {
+	border-top-left-radius: 2px;
+	border-top-right-radius: 2px;
+}
+
+.text-center { text-align: center; }
+
+.radius { border-radius: 2px; }
+
+.padding-tb { padding-top: 1.6rem; padding-bottom: 1.6rem;}
+
+.shadowDepth0 { box-shadow: 0 1px 3px rgba(0,0,0, 0.12); }
+
+.shadowDepth1 {
+   box-shadow:
+  		0 1px 3px rgba(0,0,0, 0.12),
+    	0 1px 2px rgba(0,0,0, 0.24);
+}
+
+
+/**
+ * Card Styles
+ */
+
+.card {
+	background-color: #fff;
+	margin-bottom: 1.6rem;
+}
+
+.card__padding {
+	padding: 1.6rem;
+}
+
+.card__image {
+	min-height: 100px;
+	background-color: #eee;
+}
+	.card__image img {
+		width: 100%;
+		max-width: 100%;
+		display: block;
+	}
+
+.card__content {
+	position: relative;
+}
+
+/* card meta */
+.card__meta time {
+	font-size: 1.5rem;
+	color: #bbb;
+	margin-left: 0.8rem;
+}
+
+/* card article */
+.card__article a {
+	text-decoration: none;
+	color: #444;
+	transition: all 0.5s ease;
+}
+
+.card__article h2 {
+	line-height: 1.2;
+	margin-bottom: 1.6rem;
+  font-size: 1.75rem;
+}
+
+.card__article a:hover {
+		color: #2980b9;
+	}
+
+/* card action */
+.card__action {
+	overflow: hidden;
+	padding-right: 1.6rem;
+	padding-left: 1.6rem;
+	padding-bottom: 1.6rem;
+}
+
+.card__author {}
+
+	.card__author img,
+	.card__author-content {
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	.card__author img{
+		border-radius: 50%;
+		margin-right: 0.6em;
+	}
+
+.card__share {
+	float: right;
+	position: relative;
+	margin-top: -42px;
+}
+
+.card__social {
+	position: absolute;
+	top: 0;
+	right: 0;
+	visibility: hidden;
+	width: 160px;
+	transform: translateZ(0);
+  	transform: translateX(0px);
+  	transition: transform 0.35s ease;
+}
+	.card__social--active {
+		visibility: visible;
+		/*z-index: 3;*/
+		transform: translateZ(0);
+ 		transform: translateX(-48px);
+  		transition: transform 0.35s ease;
+	}
+
+.share-toggle {
+	z-index: 2;
+}
+.share-toggle:before {
+	content: "\f1e0";
+	font-family: 'FontAwesome';
+	color: #3498db;
+}
+	.share-toggle.share-expanded:before {
+		content: "\f00d";
+	}
+
+.share-icon {
+	display: inline-block;
+	width: 48px;
+	height: 48px;
+	line-height: 48px;
+	text-align: center;
+	border-radius: 50%;
+	background-color: #fff;
+	transition: all 0.3s ease;
+	outline: 0;
+
+	box-shadow:
+	  		0 2px 4px rgba(0,0,0, 0.12),
+	    	0 2px 4px rgba(0,0,0, 0.24);
+}
+	.share-icon:hover,
+	.share-icon:focus {
+		box-shadow:
+	  		0 3px 6px rgba(0,0,0, 0.12),
+	    	0 3px 6px rgba(0,0,0, 0.24);
+
+	    -webkit-transform: scale(1.2);
+	    -moz-transform: scale(1.2);
+	    -ms-transform: scale(1.2);
+	    -o-transform: scale(1.2);
+	    transform: scale(1.2);
+	}
+
+.facebook {
+	background-color: #3b5998;
+}
+.twitter {
+	background-color: #00abe3;
+}
+.googleplus {
+	background-color: #d3492c;
+}
+
+.facebook,
+.twitter,
+.googleplus {
+	color: #fff;
+}
+
+	.facebook:hover,
+	.twitter:hover,
+	.googleplus:hover {
+		color: #eee;
+	}
+
+#splash-blue {
+  background-color: #272D4E;
+  background-image: radial-gradient(circle farthest-side at right bottom,
+    #414b82 34%, #272d4e 100%);
+}
+
+#splash-blue .hero-home {
+  min-height:400px;
+  display:flex;
+  align-items:center;
+}
+
+#splash-blue .main-title {
+  margin-top:0;
+  line-height:inherit;
+  font-size:2.2em;
+  font-weight:400;
+  text-align:center;
+}
+
+#splash-blue .sub-title {
+  text-align:center
+}
+
+#splash-blue .btn, #splash-blue .btn-large {
+  margin-top:25px;
+  padding:0 1em;
+}
+
+#splash-blue .full-width {
+  width:100%;
+}
+
+@media only screen and (max-width:992px) {
+  #splash-blue .main-title {
+    font-size:2rem;
+    margin-bottom:0;
+  }
+
+  #splash-blue h5 {
+    font-size:1.6rem;
+    margin:10px 0 20px;
+  }
+}
+
+@media only screen and (max-width:600px) {
+  #splash-blue {
+    padding:30px 0;
+    max-height:600px;
+  }
+}
