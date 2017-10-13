@@ -70,3 +70,6 @@ gem 'codacy-coverage', :require => false
 # Add Materialize CSS assets to Rails
 gem 'materialize-sass'
 gem 'material_icons'
+
+gem 'webpack-rails'
+gem 'webpack'

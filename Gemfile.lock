@@ -207,6 +207,9 @@ GEM
       activemodel (>= 5.0)
       bindex (>= 0.4.0)
       railties (>= 5.0)
+    webpack (0.4.2)
+    webpack-rails (0.9.11)
+      railties (>= 3.2.0)
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
@@ -241,6 +244,8 @@ DEPENDENCIES
   tzinfo-data
   uglifier
   web-console (>= 3.3.0)
+  webpack
+  webpack-rails
 
 BUNDLED WITH
    1.16.0.pre.2
