@@ -46,7 +46,9 @@ group :development, :test do
   gem 'selenium-webdriver'
   # Add factory girl for seeding data to database
   gem 'factory_girl_rails'
+  gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master'
   gem 'rspec_junit_formatter'
+  gem 'capybara-selenium'
 end
 
 group :test do
@@ -70,3 +72,8 @@ gem 'codacy-coverage', :require => false
 # Add Materialize CSS assets to Rails
 gem 'materialize-sass'
 gem 'material_icons'
+
+gem 'webpack-rails'
+gem 'webpack'
+
+gem 'geckodriver-helper'

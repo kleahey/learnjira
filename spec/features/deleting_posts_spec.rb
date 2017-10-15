@@ -3,11 +3,11 @@ require 'rails_helper.rb'
 
 feature 'Deleting a post' do
 
-  scenario 'removes the post from view.' do
-    create(:post)
+  scenario 'removes the post from view.', :js => true do
+    @post = create(:post)
 
     visit '/blog'
-    click_link ( 'This is a title string' )
+    click_link ( "#{@post.title}" )
     click_link ( 'Edit Post' )
     click_link ( 'Delete Post' )
     expect( page.current_path ).to eq( '/blog' )

@@ -10,8 +10,8 @@
 
   <body>
     <% flash.each do |name, msg| %>
-      <%= content_tag :div, msg, class: [:alert, alert_for(name)] %>
-    <% end %> 
+      <%= javascript_tag "Materialize.toast('#{msg}', 4000, 'yellow darken-2')" %>
+    <% end %>
 
     <%= yield %>
   </body>
