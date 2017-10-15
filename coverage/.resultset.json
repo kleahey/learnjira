@@ -9,7 +9,7 @@
         null,
         null,
         null,
-        6,
+        0,
         null,
         null
       ],
@@ -88,8 +88,30 @@
         1,
         1,
         null
+      ],
+      "/Users/kleahey/Git/learnjira/app/channels/application_cable/channel.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/kleahey/Git/learnjira/app/channels/application_cable/connection.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/kleahey/Git/learnjira/app/jobs/application_job.rb": [
+        0,
+        0
+      ],
+      "/Users/kleahey/Git/learnjira/app/mailers/application_mailer.rb": [
+        0,
+        0,
+        0,
+        0
       ]
     },
-    "timestamp": 1507906716
+    "timestamp": 1508081277
   }
 }
