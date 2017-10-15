@@ -6,9 +6,9 @@ feature 'Display individual post' do
     post_one = create(:post)
 
     visit '/blog'
-    click_link ("This is a title string")
-    expect(page).to have_content("This is a title string")
-    expect(page).to have_content("This is body text.")
+    click_link ("#{post_one.title}")
+    expect(page).to have_content("#{post_one.title}")
+    expect(page).to have_content("#{post_one.body}")
     expect(page.current_path).to eq( post_path( post_one.id ) )
   end
 end

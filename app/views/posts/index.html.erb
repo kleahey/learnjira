@@ -1,4 +1,4 @@
-<section class="z-depth-1" id="splash-blue">
+<section class="z-depth-3" id="splash-blue">
   <div class="container">
     <div class="row hero-home">
       <div class="col m10 offset-m1 s12 l10 offset-l1">
@@ -14,44 +14,52 @@
 </section>
 
 <div class="container">
-  <% @posts.each do |x| %>
-    <div class="wrapper">
-      <div class="card radius shadowDepth1">
-        <div class="card__image border-tlr-radius">
-    	    <img src="http://lorempixel.com/400/200/sports/" alt="image" class="border-tlr-radius">
-        </div>
-        <div class="card__content card__padding">
-          <div class="card__share">
-            <div class="card__social">
-              <a class="share-icon facebook" href="#"><span class="fa fa-facebook"></span></a>
-              <a class="share-icon twitter" href="#"><span class="fa fa-twitter"></span></a>
-              <a class="share-icon googleplus" href="#"><span class="fa fa-google-plus"></span></a>
-            </div>
+  <div class="section">
+    <% @posts.in_groups_of(3, false).each do |group| %>
+    <div class="row">
+          <% group.each do |x| %>
+          <div class="col m6 s12 l4">
+              <div class="card radius hoverable">
+                <div class="card__image border-tlr-radius">
+    	            <img src="http://lorempixel.com/400/200/sports/" alt="image" class="border-tlr-radius">
+                </div>
+                <div class="card__content card__padding">
+                  <div class="card__share">
+                    <div class="card__social">
+                      <a class="share-icon facebook" href="#"><span class="fa fa-facebook"></span></a>
+                      <a class="share-icon twitter" href="#"><span class="fa fa-twitter"></span></a>
+                      <a class="share-icon googleplus" href="#"><span class="fa fa-google-plus"></span></a>
+                    </div>
 
-            <a id="share" class="share-toggle share-icon" href="#"></a>
-          </div>
+                    <a id="share" class="share-toggle share-icon" href="#"></a>
+                  </div>
 
-          <div class="card__meta">
-    	       <a href="#">Web Design</a>
-             <time>17th March</time>
-           </div>
+                  <div class="card__meta">
+    	               <a href="#">Web Design</a>
+                     <time>17th March</time>
+                   </div>
 
-           <article class="card__article">
-	             <%= content_tag( :h2, (link_to "#{x.title}", post_path(x.id)) ) %>
-	             <p><%= x.body %></p>
-	         </article>
-        </div>
+                   <article class="card__article">
+	                    <%= content_tag( :h2, (link_to "#{x.title}", post_path(x.id)) ) %>
+	                     <div class="card__article body-container truncate">
+                         <p><%= x.body %></p>
+                       </div>
+	                 </article>
+                </div>
 
-        <div class="card__action">
+                <div class="card__action">
 
-          <div class="card__author">
-    		      <img src="http://lorempixel.com/40/40/sports/" alt="user">
-    		        <div class="card__author-content">
-    				      By <a href="#">John Doe</a>
-    			      </div>
-    	    </div>
-        </div>
-    </div>
-  </div>
-  <% end %>
+                  <div class="card__author">
+    		            <img src="http://lorempixel.com/40/40/sports/" alt="user">
+    		              <div class="card__author-content">
+    				            By <a href="#">John Doe</a>
+    			            </div>
+    	            </div>
+                </div>
+             </div>
+             </div>
+         <% end %>
+   </div>
+   <% end %>
+ </div>
 </div>

@@ -48,6 +48,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master'
   gem 'rspec_junit_formatter'
+  gem 'capybara-selenium'
 end
 
 group :test do
@@ -74,3 +75,5 @@ gem 'material_icons'
 
 gem 'webpack-rails'
 gem 'webpack'
+
+gem 'geckodriver-helper'
