@@ -13,4 +13,15 @@
   </div>
 </section>
 
-<p><%= @post.body %></p>
+<div class="container">
+  <div class="row">
+    <div class="l2 m2">
+      <div class="preload">
+        <%= link_to "#{content_tag(:i, "add", { class: "material-icons" })}", posts_path, { class: "btn-floating btn-large scale-transition" } %>
+      </div>
+    </div>
+    <div class="col l8 offset-l2 m8 offset-m2 s12">
+      <p class="flow-text"><%= @post.body %></p>
+    </div>
+  </div>
+</div>
