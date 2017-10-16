@@ -10,3 +10,4 @@ require 'factory_girl_rails'
 require 'faker'
 
 30.times { FactoryGirl.create(:post) }
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?

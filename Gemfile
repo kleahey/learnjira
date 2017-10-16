@@ -77,3 +77,12 @@ gem 'webpack-rails'
 gem 'webpack'
 
 gem 'geckodriver-helper'
+
+
+# SAASy gems
+gem 'activeadmin'
+gem "active_material", github: "vigetlabs/active_material"
+gem 'devise'
+gem 'cancancan', '~> 1.10'
+gem 'draper'
+gem 'pundit'
