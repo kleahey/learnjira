@@ -15,4 +15,6 @@
 //= require turbolinks
 //= require materialize-sprockets
 //= require materialize/extras/nouislider
+//= active_admin/base
+//= active_material
 //= require_tree .
